@@ -1,0 +1,60 @@
+# ===== .NET / ASP.NET Core =====
+backend/bin/
+backend/obj/
+backend/*.user
+backend/.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ===== Flutter / Dart =====
+mobile_app/.dart_tool/
+mobile_app/.flutter-plugins
+mobile_app/.flutter-plugins-dependencies
+mobile_app/build/
+mobile_app/.packages
+mobile_app/pubspec.lock
+mobile_app/android/.gradle/
+mobile_app/android/local.properties
+mobile_app/android/key.properties
+mobile_app/android/app/google-services.json
+mobile_app/ios/Flutter/flutter_export_environment.sh
+mobile_app/ios/Pods/
+mobile_app/ios/.symlinks/
+mobile_app/macos/Pods/
+mobile_app/linux/flutter/ephemeral/
+mobile_app/windows/flutter/ephemeral/
+mobile_app/web/
+
+# ===== APK / Build artifacts =====
+*.apk
+*.aab
+*.ipa
+
+# ===== Python scripts (deploy tools) =====
+__pycache__/
+*.pyc
+*.pyo
+vps_deploy.py
+upload_apk.py
+check_status.py
+check_api.py
+redeploy_backend.py
+write_camera.py
+
+# ===== IDE =====
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Secrets / Credentials =====
+*.env
+.env.*
+appsettings.Production.json

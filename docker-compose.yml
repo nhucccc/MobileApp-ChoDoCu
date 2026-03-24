@@ -1,0 +1,37 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    container_name: chodocu_sqlserver
+    environment:
+      SA_PASSWORD: "ChoDoCu@2024!"
+      ACCEPT_EULA: "1"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: chodocu_backend
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__Default=Server=sqlserver;Database=ChoDoCuDb;User Id=sa;Password=ChoDoCu@2024!;TrustServerCertificate=True;
+      - Jwt__Key=chodocu-super-secret-key-2024-minimum-32-chars!!
+      - Jwt__Issuer=ChoDoCuAPI
+      - Jwt__Audience=ChoDoCuApp
+      - Cloudinary__CloudName=dx0vpg0u4
+      - Cloudinary__ApiKey=267277227229178
+      - Cloudinary__ApiSecret=8t2JpuTVpFOTGMppOOIOEtb1A48
+    ports:
+      - "8080:8080"
+    depends_on:
+      - sqlserver
+    restart: unless-stopped
+
+volumes:
+  sqlserver_data:
