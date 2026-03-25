@@ -36,12 +36,17 @@ mobile_app/web/
 __pycache__/
 *.pyc
 *.pyo
-vps_deploy.py
-upload_apk.py
-check_status.py
-check_api.py
-redeploy_backend.py
-write_camera.py
+*.py
+
+# ===== Shell / deploy scripts =====
+*.sh
+nginx.conf
+deploy.sh
+setup_vps.sh
+
+# ===== Misc =====
+build_log.txt
+test_link.py
 
 # ===== IDE =====
 .idea/
