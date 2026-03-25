@@ -134,5 +134,5 @@ Tải APK bản mới nhất tại:
 ---
 
 <div align="center">
-Made with ❤️ by **Ngô Quang Huy**
+Made with ❤️ by **Ngọ Quang Huy**
 </div>
